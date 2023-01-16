@@ -40,7 +40,7 @@ puppeteer.launch({ headless: true, executablePath: executablePath(), args: [`--w
 
     await page.goto(categhrefTxt)
     await parsepage(page);
-    console.log("=====================");
+    // console.log("=====================");
     await page.goto(categhrefTxt1)
     await parsepage(page);
 	await browser.close();

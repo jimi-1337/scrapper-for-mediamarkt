@@ -1,12 +1,7 @@
 
-const body = {
-    "username": "test4@mail.com",
-    "password": "test"
-}
+const {body, Token_Url, Post_Card} = require('./config')
 
-const Token_Url = `http://localhost:5000/auth/login`;
-const Post_Card = `http://localhost:5000/cards/createCard`;
-access_token = "";
+let access_token = "";
 
 async function GetAccessToken(page) {
     await page.setRequestInterception(true);
@@ -41,8 +36,7 @@ async function sendCard(page, card) {
     });
     const response = await page.goto(Post_Card);
     const responseBody = await response.json()
-    console.log(responseBody);
-    // access_token = responseBody.access_token;
+    // console.log(responseBody);
     await page.setRequestInterception(false);
 }
 
